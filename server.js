@@ -213,3 +213,6 @@ app.post('/api/daily/guess', (req, res) => {
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log('PinDrop backend on port ' + PORT));
+
+// Keep-alive endpoint
+app.get('/ping', (req, res) => res.json({ ok: true, time: Date.now() }));
